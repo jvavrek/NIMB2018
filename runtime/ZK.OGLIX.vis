@@ -1,0 +1,42 @@
+#
+##########################################################################
+#
+# name: ZK.OGLIX.vis
+# date: August 14, 2018
+# auth: Jayson Vavrek, Zach Hartwig
+# mail: jvavrek@mit.edu, hartwig@psfc.mit.edu
+# 
+# desc: This is macro file executed by the binary of ZK when the user has
+#       specified to use OpenGL graphics from the cmd line
+#
+##########################################################################
+#
+# Create a scene for visualization
+/vis/scene/create
+#
+# Open the OpenGL window with some basic settings
+/vis/open OGLIX 800
+/vis/viewer/set/autoRefresh false
+/vis/viewer/set/viewpointThetaPhi 45 45 deg
+/vis/drawVolume
+#/vis/viewer/set/background white
+/vis/viewer/set/style surface
+/vis/scene/add/axes 0 0 0 25 cm
+/vis/viewer/set/lineSegmentsPerCircle 150
+/vis/scene/endOfEventAction accumulate 100
+#/vis/scene/endOfRunAction accumulate
+
+/vis/set/textColour green
+/vis/set/textLayout right
+/vis/scene/add/text2D 0.9 -.9 24 ! ! ZKExp
+
+/vis/viewer/flush
+
+/vis/modeling/trajectories/create/drawByCharge
+/vis/modeling/trajectories/drawByCharge-0/set 1 blue
+/vis/modeling/trajectories/drawByCharge-0/set -1 blue
+/vis/modeling/trajectories/drawByCharge-0/set 0 red
+
+/vis/viewer/update
+/vis/viewer/set/autoRefresh true
+

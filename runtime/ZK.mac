@@ -1,0 +1,22 @@
+#
+##########################################################################
+#
+# name: ZK.mac
+# date: August 14, 2018
+# auth: Jayson Vavrek, Zach Hartwig
+# mail: jvavrek@mit.edu, hartwig@psfc.mit.edu
+# 
+# desc: This is an all-purpose macro file to contain a sequence of
+#       user-specificed commands that can easily be executed for
+#       convenience.
+# 
+##########################################################################
+#
+
+/ZK/root/init
+
+/geometry/test/run
+
+/run/beamOn 1000000
+
+/ZK/root/write

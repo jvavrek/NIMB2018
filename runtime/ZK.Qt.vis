@@ -1,0 +1,27 @@
+#
+##########################################################################
+#
+# name: ZK.Qt.vis
+# date: 17 Sep 14
+# auth: Zach Hartwig
+# mail: hartwig@psfc.mit.edu
+# 
+# desc: This is macro file executed by the binary of ZK when the user has
+#       specified to use Qt graphics from the cmd line
+#
+##########################################################################
+#
+/vis/scene/create
+/vis/scene/add/volume world
+/vis/scene/add/userAction
+/vis/scene/add/axes 0 0 0 2 m
+#
+/vis/open OGL
+/vis/viewer/set/viewpointThetaPhi 45 45 deg
+/vis/viewer/flush
+/vis/viewer/set/projection p
+/vis/viewer/set/lineSegmentsPerCircle 50
+#
+/tracking/storeTrajectory 1
+/vis/scene/endOfEventAction accumulate -1
+# /vis/scene/endOfRunAction accumulate 
